@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Inicio de sesión -->
+        <div id="inicioSesion">
+            <h2 id="bienvenido">BIENVENIDO</h2>
+            <div class="input-icon">
+                <i class="bi bi-person-circle"></i>
+                <input type="text" id="usuario" placeholder="Usuario" required />
+            </div>
+            <input type="password" id="contrasena" placeholder="Contraseña" required />
+            <button onclick="iniciarSesion()">Ingresar</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+        </div>
+
+        <!-- Registro -->
+        <div id="registro" style="display: none;">
+            <h2 id="bienvenido">Registro de Usuario</h2>
+            <input type="text" id="usuarioNuevo" placeholder="Usuario" required />
+            <input type="password" id="contrasenaNueva" placeholder="Contraseña" required />
+            <input type="password" id="confirmarContraseña" placeholder="Confirmar Contraseña" required />
+            <button onclick="registrar()">Registrar</button>
+            <p>¿Ya tienes cuenta? <a href="#" onclick="mostrarInicioSesion()">Inicia sesión aquí</a></p>
+        </div>
+
+        <!-- Panel de usuario -->
+        <div id="panel" style="display: none;">
+            <h2 id="bienvenido">Bienvenido, <span id="saldoUsuario"></span></h2>
+            <p>Saldo Disponible: $<span id="saldo">200000</span></p>
+            <!--Transferir-->
+            <div>
+                <h3 id="bienvenido">Transferir Dinero</h3>
+                <input type="text" id="destinatario" placeholder="Destinatario" />
+                <input type="number" id="montoTransferir" placeholder="Monto A Transferir" />
+                <button onclick="transferir()">Transferir</button>
+            </div>
+            <!--Consignar-->
+            <div>
+                <h3 id="bienvenido">Consignar dinero</h3>
+                <input type="number" id="montoConsignar" placeholder="Monto a consignar" />
+                <button onclick="consignar()">Consignar</button>
+            </div>
+            <div>
+                <p onclick="mostrarHistorialTransferencias()" id="bienvenido">Historial De Transferencias</p>
+                <ul id="historialTransferencias"></ul>
+            </div>
+            <!--Retirar-->
+            <div>
+                <h3 id="bienvenido">Retirar dinero</h3>
+                <input type="number" id="montoRetirar" placeholder="Monto A Retirar" />
+                <button onclick="retirar()">Retirar</button>
+            </div>
+            <br>
+            <button onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
